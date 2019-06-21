@@ -2,7 +2,8 @@ $(document).ready(function() {
     $('.pelis').children().addClass("peli");
     $("#add").removeClass("peli");
     
-    $(".peli").click(function() {
+    function mostrarLista(peliculas){
+    $(".peli").on("click", function() {
         let id = $(this).attr("id");
         $(".forma").hide();
         $(".detalles").show();
@@ -28,7 +29,7 @@ $(document).ready(function() {
         $(".forma").show();
     });
 
-    $('#forma').submit(function () {
+    $('#forma').on("submit", function () {
         var formData = {
             'nombre':$('input[name="nombre"]').val(),
             'year':$('input[name="year"]').val(),
@@ -46,5 +47,4 @@ $(document).ready(function() {
             encode:true
         });
     });
-});
-
+};

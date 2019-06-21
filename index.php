@@ -16,11 +16,11 @@
                         $peliculas = json_decode($jsonString, true);
                     ?>
                         let peliculas = <?php echo json_encode($peliculas) ?>;
-                        for (let i = 0; i < peliculas.length; i++){
-                            $(".pelis").append(
-                                $("<li>").attr('id',peliculas[i].nombre).append(peliculas[i].nombre)
-                            );
-                        } 
+                        for (let i = 0; i < peliculas.length; i++) { 
+                            $("ul.pelis").append(
+                                $("<li>").attr('id', peliculas[i]["nombre"]).append(peliculas[i]["nombre"]
+                                )); 
+                        }
                     <?php
                         $newJson = json_encode($peliculas);
                         file_put_contents('lista.json', $newJson);
