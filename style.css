@@ -1,0 +1,29 @@
+html, body, ul {
+    margin:0;
+    padding:0;
+}
+
+.container {
+    display:flex;
+}
+
+.lista {
+    display:inline-block;
+    margin:0;
+    background-color:red;
+    width:25%;
+    height:100vh;
+    overflow-y:scroll;
+}
+
+.info {
+    display:inline-block;
+    margin:0;
+    background-color:blue;
+    width:75%;
+    height:100vh;
+}
+
+.forma {
+    display:none;
+}
