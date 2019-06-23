@@ -3,7 +3,7 @@
     <header>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="jquery-3.4.1.js"></script>
-        <script src="script.js?newversion"></script>
+        <script src="script.js?new"></script>
     </header>
     <body>
         <?php include 'Movie.php'; ?>
@@ -17,10 +17,8 @@
                     ?>
                         let peliculas = <?php echo json_encode($peliculas) ?>;
                         for (let i = 0; i < peliculas.length; i++) { 
-                            $("ul.pelis").append(
-                                $("<li>").attr('id', peliculas[i]["nombre"]).append(peliculas[i]["nombre"]
-                                )); 
-                        }
+                            $("ul.pelis").append($("<li>").attr('id', peliculas[i]["nombre"]).append(peliculas[i]["nombre"])); 
+                        };
                     <?php
                         $newJson = json_encode($peliculas);
                         file_put_contents('lista.json', $newJson);

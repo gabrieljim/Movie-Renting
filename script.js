@@ -2,7 +2,6 @@ $(document).ready(function() {
     $('.pelis').children().addClass("peli");
     $("#add").removeClass("peli");
     
-    function mostrarLista(peliculas){
     $(".peli").on("click", function() {
         let id = $(this).attr("id");
         $(".forma").hide();
@@ -24,7 +23,7 @@ $(document).ready(function() {
         );
     });
 
-    $("#add").click(function() {
+    $("#add").on("click", function() {
         $(".detalles").hide();
         $(".forma").show();
     });
@@ -47,4 +46,4 @@ $(document).ready(function() {
             encode:true
         });
     });
-};
+});
