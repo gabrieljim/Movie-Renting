@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-    <header>
+    <head>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <script src="jquery-3.4.1.js"></script>
-        <script src="script.js?new"></script>
-    </header>
+<!--        <script src="jquery-3.4.1.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    </head>
     <body>
         <?php include 'Movie.php'; ?>
         <div class="container">
@@ -51,6 +51,7 @@
                 </div>
             </div>
         </div>
+    <script src="script.js?new"></script>
     </body>
 </html>
 

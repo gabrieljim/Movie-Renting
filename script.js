@@ -45,5 +45,6 @@ $(document).ready(function() {
             dataType: 'json',
             encode:true
         });
+        window.location.reload(); 
     });
 });
