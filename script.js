@@ -3,6 +3,8 @@ $(document).ready(function() {
     $("#add").removeClass("peli");
     
     $(".peli").on("click", function() {
+        $(".peli").removeClass("clickeada");
+        $(this).addClass("clickeada");
         let id = $(this).attr("id");
         $(".forma").hide();
         $(".detalles").show();
@@ -11,11 +13,11 @@ $(document).ready(function() {
             function(data) {
                 for(let i = 0; i < data.length; i++) {
                     if (data[i]["nombre"] == id) {
-                        $("h1#nombre").html(data[i]["nombre"]);
-                        $("h2#year").html(data[i]["year"]);
-                        $("h3#director").html(data[i]["director"]);
-                        $("h4#precio").html("Precio: "+ data[i]["precio"]);
-                        $("h4#alquilada").html(data[i]["alquilada"]);
+                        $("span#nombre").html(data[i]["nombre"]);
+                        $("span#year").html("Hecha en " + data[i]["year"]);
+                        $("span#director").html("Dirigida por " + data[i]["director"]);
+                        $("span#precio").html("Precio: "+ data[i]["precio"]);
+                        $("span#alquilada").html("Alquilada: " + (data[i]["alquilada"] == "true" ? "Si" : "No"));
                         break;
                     }
                 }
@@ -26,6 +28,7 @@ $(document).ready(function() {
     $("#add").on("click", function() {
         $(".detalles").hide();
         $(".forma").show();
+        $(".peli").removeClass("clickeada");
     });
 
     $('#forma').on("submit", function () {

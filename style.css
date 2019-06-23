@@ -1,6 +1,7 @@
 html, body, ul {
     margin:0;
     padding:0;
+    color:white;
 }
 
 .container {
@@ -10,7 +11,7 @@ html, body, ul {
 .lista {
     display:inline-block;
     margin:0;
-    background-color:red;
+    background-color:#444;
     width:25%;
     height:100vh;
     overflow-y:scroll;
@@ -19,11 +20,45 @@ html, body, ul {
 .info {
     display:inline-block;
     margin:0;
-    background-color:blue;
+    background-color:#444;
     width:75%;
     height:100vh;
 }
 
+.peli, #add {
+    font-size:25px;
+    padding:7px;
+    color:white;
+}
+
+.peli:hover, #add:hover {
+    color:#444;
+    background-color:#ddd;
+}
+
 .forma {
     display:none;
+}
+
+.detalles, .forma {
+    margin:20px;
+}
+
+.clickeada {
+    color:#444;
+    background-color:white !important;
+}
+
+#submitButton {
+    margin: 10px 0;
+}
+
+
+.infoDeInput {
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+label {
+    font-size:20px;
 }

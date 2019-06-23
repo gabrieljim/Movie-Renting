@@ -4,6 +4,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
 <!--        <script src="jquery-3.4.1.js"></script> -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="script.js?new"></script>
     </head>
     <body>
         <?php include 'Movie.php'; ?>
@@ -29,29 +30,33 @@
             </div>        
             <div class="info">
                 <div class="detalles">
-                    <h1 id="nombre"></h1>
-                    <h2 id="year"></h2>
-                    <h3 id="director"></h3>
-                    <h4 id="precio"></h3>
-                    <h4 id="alquilada"></h4>
+                    <h1 style="text-align:center;"><span id="nombre"></span></h1>
+                    <h2><span id="year"></span></h2>
+                    <h2><span id="director"></span></h3>
+                    <h2><span id="precio"></span></h4>
+                    <h2><span id="alquilada"></span></h4>
                 </div>
                 <div class="forma">
                     <form id="forma" method="post"> <!-- Submit controlado por jquery -->
                         <h1>Añadir una película</h1>
-                        Nombre:<input required type="text" name="nombre"><br>
-                        Año:<input required type="number" name="year"><br>
-                        Director:<input required type="text" name="director"><br>
-                        Precio:<input required type="number" name="precio"><br>
-                        <label for="alquilada">Alquilada:</label>
-                        <input required type="radio" name="alquilada" value="true"> Si
-                        <input required type="radio" name="alquilada" value="false"> No<br>
-                        Devolucion:<input required type="date" name="devolucion"><br>
+                        <label for="nombre">Nombre:</label><br>
+                        <input class="infoDeInput" required type="text" name="nombre"><br>
+                        <label for="year">Año:</label><br>
+                        <input class="infoDeInput" required type="number" name="year"><br>
+                        <label for="director">Director:</label><br>
+                        <input class="infoDeInput" required type="text" name="director"><br>
+                        <label for="precio">Precio:</label><br>
+                        <input class="infoDeInput" required type="number" name="precio"><br>
+                        <label for="alquilada">Alquilada:</label><br>
+                        <input class="infoDeInput" required type="radio" name="alquilada" value="true"> Si
+                        <input class="infoDeInput" required type="radio" name="alquilada" value="false"> No<br>
+                        <label for="devolucion">Devolucion:</label><br>
+                        <input class="infoDeInput" required type="date" name="devolucion"><br>
                         <button type="submit" id="submitButton">Agregar</button>
                     </form>
                 </div>
             </div>
         </div>
-    <script src="script.js?new"></script>
     </body>
 </html>
 
