@@ -38,11 +38,11 @@ html, body, ul {
     background-color:#ddd;
 }
 
-.forma {
+.formaCont {
     display:none;
 }
 
-.detalles, .forma {
+.detalles, .formaCont {
     margin:20px;
 }
 

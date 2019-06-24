@@ -1,13 +1,13 @@
 $(document).ready(function() {
     $('.pelis').children().addClass("peli");
     $("#add").removeClass("peli");
-    
+
     $(".peli").on("click", function() {
         $("span#devolucion").html("");
         $(".peli").removeClass("clickeada");
         $(this).addClass("clickeada");
         let id = $(this).attr("id");
-        $(".forma").hide();
+        $(".formaCont").hide();
         $(".detalles").show();
         $.getJSON('lista.json')         
         .done(
@@ -40,11 +40,12 @@ $(document).ready(function() {
 
     $("#add").on("click", function() {
         $(".detalles").hide();
-        $(".forma").show();
+        $(".formaCont").show();
         $(".peli").removeClass("clickeada");
     });
 
-    $('#forma').on("submit", function () {
+    $('#forma').on("submit", function (e) {
+        e.preventDefault();
         var formData = {
             'nombre':$('input[name="nombre"]').val(),
             'year':$('input[name="year"]').val(),
@@ -60,7 +61,6 @@ $(document).ready(function() {
             data: formData,
             dataType: 'json',
             encode:true
-        });
-        window.location.reload(); 
+        }).done(document.location.reload(true)); 
     });
 });
