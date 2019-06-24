@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" type="text/css" href="style.css">
 <!--        <script src="jquery-3.4.1.js"></script> -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -35,6 +36,7 @@
                     <h2><span id="director"></span></h3>
                     <h2><span id="precio"></span></h4>
                     <h2><span id="alquilada"></span></h4>
+                    <h2><span id="devolucion"></span></h4>
                 </div>
                 <div class="forma">
                     <form id="forma" method="post"> <!-- Submit controlado por jquery -->
@@ -50,7 +52,7 @@
                         <label for="alquilada">Alquilada:</label><br>
                         <input class="infoDeInput" required type="radio" name="alquilada" value="true"> Si
                         <input class="infoDeInput" required type="radio" name="alquilada" value="false"> No<br>
-                        <label for="devolucion">Devolucion:</label><br>
+                        <label for="devolucion">Se devolverá el:</label><br>
                         <input class="infoDeInput" required type="date" name="devolucion"><br>
                         <button type="submit" id="submitButton">Agregar</button>
                     </form>

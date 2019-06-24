@@ -3,6 +3,7 @@ $(document).ready(function() {
     $("#add").removeClass("peli");
     
     $(".peli").on("click", function() {
+        $("span#devolucion").html("");
         $(".peli").removeClass("clickeada");
         $(this).addClass("clickeada");
         let id = $(this).attr("id");
@@ -12,12 +13,24 @@ $(document).ready(function() {
         .done(
             function(data) {
                 for(let i = 0; i < data.length; i++) {
+                    var hoy = new Date();
+                    var aDevolver = new Date(data[i]["devolucion"]);
+                    var diferencia = Math.round((aDevolver - hoy)/(1000*60*60*24))+1;
                     if (data[i]["nombre"] == id) {
                         $("span#nombre").html(data[i]["nombre"]);
                         $("span#year").html("Hecha en " + data[i]["year"]);
                         $("span#director").html("Dirigida por " + data[i]["director"]);
-                        $("span#precio").html("Precio: "+ data[i]["precio"]);
+                        $("span#precio").html("Precio: €"+ data[i]["precio"]);
                         $("span#alquilada").html("Alquilada: " + (data[i]["alquilada"] == "true" ? "Si" : "No"));
+                        if (data[i]["alquilada"] == "true") {
+                            if (diferencia < 0) {
+                                costo = Math.abs(diferencia) * 1.2;
+                                $("span#devolucion").html("Pelicula retrasada por "+ Math.abs(diferencia) + " dias, su cargo hasta ahora es de €" + costo); 
+                            }
+                            else {
+                                $("span#devolucion").html("Esta pelicula será devuelta en "+ diferencia + " dias"); 
+                            }
+                        };
                         break;
                     }
                 }
